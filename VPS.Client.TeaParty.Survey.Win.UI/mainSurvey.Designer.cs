@@ -33,7 +33,6 @@
             this.newSurvey = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.survey = new System.Windows.Forms.ToolStripComboBox();
-            this.surveyLabel = new System.Windows.Forms.ToolStripLabel();
             this.personSection = new System.Windows.Forms.Label();
             this.last = new System.Windows.Forms.Label();
             this.lastName = new System.Windows.Forms.TextBox();
@@ -42,13 +41,14 @@
             this.add1 = new System.Windows.Forms.Label();
             this.address1 = new System.Windows.Forms.TextBox();
             this.cityName = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.city = new System.Windows.Forms.TextBox();
             this.st = new System.Windows.Forms.Label();
             this.state = new System.Windows.Forms.TextBox();
             this.zip = new System.Windows.Forms.Label();
             this.zipCode = new System.Windows.Forms.TextBox();
             this.add2 = new System.Windows.Forms.Label();
             this.address2 = new System.Windows.Forms.TextBox();
+            this.submit = new System.Windows.Forms.Button();
             this.mainSurveyToolbar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,8 +57,7 @@
             this.mainSurveyToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newSurvey,
             this.toolStripSeparator1,
-            this.survey,
-            this.surveyLabel});
+            this.survey});
             this.mainSurveyToolbar.Location = new System.Drawing.Point(0, 0);
             this.mainSurveyToolbar.Name = "mainSurveyToolbar";
             this.mainSurveyToolbar.Size = new System.Drawing.Size(769, 25);
@@ -72,7 +71,8 @@
             this.newSurvey.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newSurvey.Name = "newSurvey";
             this.newSurvey.Size = new System.Drawing.Size(73, 22);
-            this.newSurvey.Text = "New Survey";
+            this.newSurvey.Text = "&New Survey";
+            this.newSurvey.Click += new System.EventHandler(this.newSurvey_Click);
             // 
             // toolStripSeparator1
             // 
@@ -85,12 +85,6 @@
             this.survey.Size = new System.Drawing.Size(121, 25);
             this.survey.Text = "Select Survey";
             this.survey.TextChanged += new System.EventHandler(this.survey_TextChanged);
-            // 
-            // surveyLabel
-            // 
-            this.surveyLabel.Name = "surveyLabel";
-            this.surveyLabel.Size = new System.Drawing.Size(80, 22);
-            this.surveyLabel.Text = "Survey to run.";
             // 
             // personSection
             // 
@@ -108,15 +102,15 @@
             this.last.Location = new System.Drawing.Point(72, 74);
             this.last.Name = "last";
             this.last.Size = new System.Drawing.Size(58, 13);
-            this.last.TabIndex = 2;
-            this.last.Text = "Last Name";
+            this.last.TabIndex = 0;
+            this.last.Text = "&Last Name";
             // 
             // lastName
             // 
             this.lastName.Location = new System.Drawing.Point(136, 71);
             this.lastName.Name = "lastName";
             this.lastName.Size = new System.Drawing.Size(217, 20);
-            this.lastName.TabIndex = 0;
+            this.lastName.TabIndex = 1;
             // 
             // first
             // 
@@ -125,7 +119,7 @@
             this.first.Name = "first";
             this.first.Size = new System.Drawing.Size(57, 13);
             this.first.TabIndex = 2;
-            this.first.Text = "First Name";
+            this.first.Text = "&First Name";
             // 
             // firstName
             // 
@@ -140,15 +134,15 @@
             this.add1.Location = new System.Drawing.Point(47, 111);
             this.add1.Name = "add1";
             this.add1.Size = new System.Drawing.Size(45, 13);
-            this.add1.TabIndex = 2;
-            this.add1.Text = "Address";
+            this.add1.TabIndex = 4;
+            this.add1.Text = "&Address";
             // 
             // address1
             // 
             this.address1.Location = new System.Drawing.Point(94, 108);
             this.address1.Name = "address1";
             this.address1.Size = new System.Drawing.Size(163, 20);
-            this.address1.TabIndex = 3;
+            this.address1.TabIndex = 5;
             // 
             // cityName
             // 
@@ -157,15 +151,15 @@
             this.cityName.Location = new System.Drawing.Point(556, 126);
             this.cityName.Name = "cityName";
             this.cityName.Size = new System.Drawing.Size(24, 13);
-            this.cityName.TabIndex = 2;
-            this.cityName.Text = "City";
+            this.cityName.TabIndex = 8;
+            this.cityName.Text = "&City";
             // 
-            // textBox2
+            // city
             // 
-            this.textBox2.Location = new System.Drawing.Point(502, 108);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(133, 20);
-            this.textBox2.TabIndex = 3;
+            this.city.Location = new System.Drawing.Point(502, 108);
+            this.city.Name = "city";
+            this.city.Size = new System.Drawing.Size(133, 20);
+            this.city.TabIndex = 9;
             // 
             // st
             // 
@@ -174,15 +168,15 @@
             this.st.Location = new System.Drawing.Point(641, 126);
             this.st.Name = "st";
             this.st.Size = new System.Drawing.Size(32, 13);
-            this.st.TabIndex = 2;
-            this.st.Text = "State";
+            this.st.TabIndex = 10;
+            this.st.Text = "&State";
             // 
             // state
             // 
             this.state.Location = new System.Drawing.Point(641, 108);
             this.state.Name = "state";
             this.state.Size = new System.Drawing.Size(33, 20);
-            this.state.TabIndex = 3;
+            this.state.TabIndex = 11;
             this.state.Text = "TN";
             this.state.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -193,15 +187,15 @@
             this.zip.Location = new System.Drawing.Point(699, 126);
             this.zip.Name = "zip";
             this.zip.Size = new System.Drawing.Size(21, 13);
-            this.zip.TabIndex = 2;
-            this.zip.Text = "Zip";
+            this.zip.TabIndex = 12;
+            this.zip.Text = "&Zip";
             // 
             // zipCode
             // 
             this.zipCode.Location = new System.Drawing.Point(680, 108);
             this.zipCode.Name = "zipCode";
             this.zipCode.Size = new System.Drawing.Size(59, 20);
-            this.zipCode.TabIndex = 3;
+            this.zipCode.TabIndex = 13;
             // 
             // add2
             // 
@@ -209,26 +203,38 @@
             this.add2.Location = new System.Drawing.Point(272, 111);
             this.add2.Name = "add2";
             this.add2.Size = new System.Drawing.Size(45, 13);
-            this.add2.TabIndex = 2;
-            this.add2.Text = "Address";
+            this.add2.TabIndex = 6;
+            this.add2.Text = "A&ddress";
             // 
             // address2
             // 
             this.address2.Location = new System.Drawing.Point(319, 108);
             this.address2.Name = "address2";
             this.address2.Size = new System.Drawing.Size(162, 20);
-            this.address2.TabIndex = 3;
+            this.address2.TabIndex = 7;
+            // 
+            // submit
+            // 
+            this.submit.Location = new System.Drawing.Point(647, 160);
+            this.submit.Name = "submit";
+            this.submit.Size = new System.Drawing.Size(92, 23);
+            this.submit.TabIndex = 14;
+            this.submit.Text = "&Submit Survey";
+            this.submit.UseVisualStyleBackColor = true;
+            this.submit.Click += new System.EventHandler(this.submit_Click);
             // 
             // mainSurvey
             // 
+            this.AcceptButton = this.submit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 481);
+            this.ClientSize = new System.Drawing.Size(769, 198);
+            this.Controls.Add(this.submit);
             this.Controls.Add(this.zipCode);
             this.Controls.Add(this.zip);
             this.Controls.Add(this.state);
             this.Controls.Add(this.st);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.city);
             this.Controls.Add(this.cityName);
             this.Controls.Add(this.firstName);
             this.Controls.Add(this.first);
@@ -255,7 +261,6 @@
         private System.Windows.Forms.ToolStripButton newSurvey;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripComboBox survey;
-        private System.Windows.Forms.ToolStripLabel surveyLabel;
         private System.Windows.Forms.Label personSection;
         private System.Windows.Forms.Label last;
         private System.Windows.Forms.TextBox lastName;
@@ -264,13 +269,14 @@
         private System.Windows.Forms.Label add1;
         private System.Windows.Forms.TextBox address1;
         private System.Windows.Forms.Label cityName;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox city;
         private System.Windows.Forms.Label st;
         private System.Windows.Forms.TextBox state;
         private System.Windows.Forms.Label zip;
         private System.Windows.Forms.TextBox zipCode;
         private System.Windows.Forms.Label add2;
         private System.Windows.Forms.TextBox address2;
+        private System.Windows.Forms.Button submit;
     }
 }
 
