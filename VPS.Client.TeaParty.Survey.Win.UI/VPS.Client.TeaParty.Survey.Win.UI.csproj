@@ -45,12 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CallStatus.cs" />
     <Compile Include="mainSurvey.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mainSurvey.Designer.cs">
       <DependentUpon>mainSurvey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="mainSurvey.resx">
@@ -80,6 +82,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SurveyGroup.txt" />
     <Content Include="ThirdParty.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

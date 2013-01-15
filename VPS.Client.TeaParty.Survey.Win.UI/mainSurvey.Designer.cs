@@ -30,9 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainSurvey));
             this.mainSurveyToolbar = new System.Windows.Forms.ToolStrip();
-            this.newSurvey = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.survey = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.groupFilter = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.startSurvey = new System.Windows.Forms.ToolStripButton();
             this.personSection = new System.Windows.Forms.Label();
             this.last = new System.Windows.Forms.Label();
             this.lastName = new System.Windows.Forms.TextBox();
@@ -49,35 +53,30 @@
             this.add2 = new System.Windows.Forms.Label();
             this.address2 = new System.Windows.Forms.TextBox();
             this.submit = new System.Windows.Forms.Button();
+            this.nextPerson = new System.Windows.Forms.Button();
+            this.previousPerson = new System.Windows.Forms.Button();
+            this.phone = new System.Windows.Forms.Label();
+            this.phoneNumber = new System.Windows.Forms.ComboBox();
+            this.status = new System.Windows.Forms.Label();
+            this.noAnswer = new System.Windows.Forms.Button();
             this.mainSurveyToolbar.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainSurveyToolbar
             // 
             this.mainSurveyToolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newSurvey,
+            this.survey,
             this.toolStripSeparator1,
-            this.survey});
+            this.toolStripLabel1,
+            this.groupFilter,
+            this.toolStripSeparator2,
+            this.toolStripSeparator3,
+            this.startSurvey});
             this.mainSurveyToolbar.Location = new System.Drawing.Point(0, 0);
             this.mainSurveyToolbar.Name = "mainSurveyToolbar";
             this.mainSurveyToolbar.Size = new System.Drawing.Size(769, 25);
             this.mainSurveyToolbar.TabIndex = 0;
             this.mainSurveyToolbar.Text = "toolStrip1";
-            // 
-            // newSurvey
-            // 
-            this.newSurvey.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.newSurvey.Image = ((System.Drawing.Image)(resources.GetObject("newSurvey.Image")));
-            this.newSurvey.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newSurvey.Name = "newSurvey";
-            this.newSurvey.Size = new System.Drawing.Size(73, 22);
-            this.newSurvey.Text = "&New Survey";
-            this.newSurvey.Click += new System.EventHandler(this.newSurvey_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // survey
             // 
@@ -85,6 +84,47 @@
             this.survey.Size = new System.Drawing.Size(121, 25);
             this.survey.Text = "Select Survey";
             this.survey.TextChanged += new System.EventHandler(this.survey_TextChanged);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(107, 22);
+            this.toolStripLabel1.Text = "Filter Survey Group";
+            // 
+            // groupFilter
+            // 
+            this.groupFilter.Items.AddRange(new object[] {
+            "Uncalled",
+            "NoAnswer",
+            "Called",
+            "All"});
+            this.groupFilter.Name = "groupFilter";
+            this.groupFilter.Size = new System.Drawing.Size(121, 25);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // startSurvey
+            // 
+            this.startSurvey.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.startSurvey.Image = ((System.Drawing.Image)(resources.GetObject("startSurvey.Image")));
+            this.startSurvey.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.startSurvey.Name = "startSurvey";
+            this.startSurvey.Size = new System.Drawing.Size(73, 22);
+            this.startSurvey.Text = "&Start Survey";
+            this.startSurvey.Click += new System.EventHandler(this.startSurvey_Click);
             // 
             // personSection
             // 
@@ -215,20 +255,90 @@
             // 
             // submit
             // 
-            this.submit.Location = new System.Drawing.Point(647, 160);
+            this.submit.Location = new System.Drawing.Point(647, 189);
             this.submit.Name = "submit";
             this.submit.Size = new System.Drawing.Size(92, 23);
-            this.submit.TabIndex = 14;
+            this.submit.TabIndex = 100;
             this.submit.Text = "&Submit Survey";
             this.submit.UseVisualStyleBackColor = true;
             this.submit.Click += new System.EventHandler(this.submit_Click);
+            // 
+            // nextPerson
+            // 
+            this.nextPerson.Location = new System.Drawing.Point(664, 160);
+            this.nextPerson.Name = "nextPerson";
+            this.nextPerson.Size = new System.Drawing.Size(75, 23);
+            this.nextPerson.TabIndex = 101;
+            this.nextPerson.TabStop = false;
+            this.nextPerson.Text = "Next >>";
+            this.nextPerson.UseVisualStyleBackColor = true;
+            this.nextPerson.Click += new System.EventHandler(this.nextPerson_Click);
+            // 
+            // previousPerson
+            // 
+            this.previousPerson.Enabled = false;
+            this.previousPerson.Location = new System.Drawing.Point(583, 160);
+            this.previousPerson.Name = "previousPerson";
+            this.previousPerson.Size = new System.Drawing.Size(75, 23);
+            this.previousPerson.TabIndex = 102;
+            this.previousPerson.TabStop = false;
+            this.previousPerson.Text = "<< Back";
+            this.previousPerson.UseVisualStyleBackColor = true;
+            this.previousPerson.Click += new System.EventHandler(this.previousPerson_Click);
+            // 
+            // phone
+            // 
+            this.phone.AutoSize = true;
+            this.phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phone.Location = new System.Drawing.Point(291, 46);
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(90, 13);
+            this.phone.TabIndex = 17;
+            this.phone.Text = "Phone Number";
+            // 
+            // phoneNumber
+            // 
+            this.phoneNumber.BackColor = System.Drawing.Color.SteelBlue;
+            this.phoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneNumber.ForeColor = System.Drawing.Color.White;
+            this.phoneNumber.FormattingEnabled = true;
+            this.phoneNumber.Location = new System.Drawing.Point(388, 42);
+            this.phoneNumber.Name = "phoneNumber";
+            this.phoneNumber.Size = new System.Drawing.Size(164, 21);
+            this.phoneNumber.TabIndex = 18;
+            // 
+            // status
+            // 
+            this.status.AutoSize = true;
+            this.status.Location = new System.Drawing.Point(696, 44);
+            this.status.Name = "status";
+            this.status.Size = new System.Drawing.Size(0, 13);
+            this.status.TabIndex = 103;
+            this.status.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // noAnswer
+            // 
+            this.noAnswer.Location = new System.Drawing.Point(477, 160);
+            this.noAnswer.Name = "noAnswer";
+            this.noAnswer.Size = new System.Drawing.Size(75, 23);
+            this.noAnswer.TabIndex = 104;
+            this.noAnswer.TabStop = false;
+            this.noAnswer.Text = "No Answer";
+            this.noAnswer.UseVisualStyleBackColor = true;
+            this.noAnswer.Click += new System.EventHandler(this.noAnswer_Click);
             // 
             // mainSurvey
             // 
             this.AcceptButton = this.submit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 198);
+            this.ClientSize = new System.Drawing.Size(769, 222);
+            this.Controls.Add(this.noAnswer);
+            this.Controls.Add(this.status);
+            this.Controls.Add(this.phoneNumber);
+            this.Controls.Add(this.phone);
+            this.Controls.Add(this.previousPerson);
+            this.Controls.Add(this.nextPerson);
             this.Controls.Add(this.submit);
             this.Controls.Add(this.zipCode);
             this.Controls.Add(this.zip);
@@ -248,6 +358,7 @@
             this.Controls.Add(this.mainSurveyToolbar);
             this.Name = "mainSurvey";
             this.Text = "Survey";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.mainSurvey_FormClosing);
             this.mainSurveyToolbar.ResumeLayout(false);
             this.mainSurveyToolbar.PerformLayout();
             this.ResumeLayout(false);
@@ -258,7 +369,7 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip mainSurveyToolbar;
-        private System.Windows.Forms.ToolStripButton newSurvey;
+        private System.Windows.Forms.ToolStripButton startSurvey;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripComboBox survey;
         private System.Windows.Forms.Label personSection;
@@ -277,6 +388,16 @@
         private System.Windows.Forms.Label add2;
         private System.Windows.Forms.TextBox address2;
         private System.Windows.Forms.Button submit;
+        private System.Windows.Forms.Button nextPerson;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripComboBox groupFilter;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.Button previousPerson;
+        private System.Windows.Forms.Label phone;
+        private System.Windows.Forms.ComboBox phoneNumber;
+        private System.Windows.Forms.Label status;
+        private System.Windows.Forms.Button noAnswer;
     }
 }
 
