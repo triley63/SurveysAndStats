@@ -141,9 +141,9 @@
             this.last.AutoSize = true;
             this.last.Location = new System.Drawing.Point(72, 74);
             this.last.Name = "last";
-            this.last.Size = new System.Drawing.Size(58, 13);
+            this.last.Size = new System.Drawing.Size(57, 13);
             this.last.TabIndex = 0;
-            this.last.Text = "&Last Name";
+            this.last.Text = "&First Name";
             // 
             // lastName
             // 
@@ -157,9 +157,9 @@
             this.first.AutoSize = true;
             this.first.Location = new System.Drawing.Point(421, 74);
             this.first.Name = "first";
-            this.first.Size = new System.Drawing.Size(57, 13);
+            this.first.Size = new System.Drawing.Size(58, 13);
             this.first.TabIndex = 2;
-            this.first.Text = "&First Name";
+            this.first.Text = "&Last Name";
             // 
             // firstName
             // 

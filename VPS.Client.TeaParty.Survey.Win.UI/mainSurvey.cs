@@ -118,18 +118,20 @@ namespace VPS.Client.TeaParty.Survey.Win.UI
                     surveyGroup.Add(new Person(
                         status
                         ,int.Parse(newPerson[1])
-                        ,newPerson[2]
-                        ,newPerson[3]
-                        ,newPerson[4]
+                        , newPerson[2]
+                        , newPerson[3]
+                        , newPerson[4]
                         ,newPerson[5]
                         ,newPerson[6]
                         ,newPerson[7]
                         ,newPerson[8]));
-                        //,newPerson[9]));
 
                     for (int i = 9; i < newPerson.Length; i++)
                     {
-                        surveyGroup[surveyGroup.Count-1].AddPhone(newPerson[i]);
+                        if (newPerson[i].IndexOf("(e)") == -1)
+                        {
+                            surveyGroup[surveyGroup.Count - 1].AddPhone(newPerson[i]);
+                        }
                     }
                 }
             }
@@ -152,6 +154,24 @@ namespace VPS.Client.TeaParty.Survey.Win.UI
                     return;
                 }
 
+                foreach (Control c in this.Controls)
+                {
+                    TextBox tb = c as TextBox;
+                    Panel p = c as Panel;
+                    if (tb != null)
+                        tb.Text = string.Empty;
+
+                    if (p != null)
+                    {
+                        foreach (Control cp in p.Controls)
+                        {
+                            RadioButton rb = cp as RadioButton;
+                            if (rb != null)
+                                rb.Checked = false;
+                        }
+                    }
+                }
+
                 if (currentPerson.Status.ToString() == this.groupFilter.Text || this.groupFilter.Text == "All")
                 {
                     this.lastName.Text = currentPerson.LastName;
@@ -169,7 +189,18 @@ namespace VPS.Client.TeaParty.Survey.Win.UI
                         this.phoneNumber.Items.Add(currentPerson.Phone[i]);
                     }
 
-                    this.phoneNumber.SelectedIndex = 0;
+                    if (this.phoneNumber.Items.Count == 0)
+                    {
+                        this.phoneNumber.Items.Clear();
+                        this.phoneNumber.Text = "";
+                        MessageBox.Show(string.Format("There is no phone number for {0} {1}", currentPerson.FirstName, currentPerson.LastName));
+                    }
+                    else
+                    {
+                        this.phoneNumber.SelectedIndex = 0;
+                        this.phone.ForeColor = this.phoneNumber.Items.Count == 1 ? System.Drawing.Color.Black : System.Drawing.Color.Red;
+                        this.phone.Text = this.phoneNumber.Items.Count == 1 ? this.phone.Text = "Phone Number" : "Phone Numbers";
+                    }
                 }
                 else
                 {

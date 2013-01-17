@@ -1,0 +1,20 @@
+Instructions for Survey
+-----------------------
+Values will be 1 for the lowest to 5 of the highest value.
+	For instance: How Satisfied are you? 1 is disatisfied, while 3 is neither satisifed or satisfied and 5 is very satisfied.
+
+1. Execute the Survey.EXE file. This is an applicafile if you are working on windows.
+2. Select "ThirdParty" from the "Select Survey" drop down list in the upper left hand corner.
+3. Select the Start Survey in the upper portion of the window
+
+NOTE: Currently the list will show all people that have not been called (which will include everyone.)
+
+4. There may be multiple phone numbers that can be retrieved from drop down box where the phone number is located.
+5. After calling ask each of the questions.
+	To Record the answers, you can select the number or you can type the number in the box provided.
+	
+6. Once the call is complete, you can select "Submit Survey". 
+	DO NOT SELECT NEXT to enter the survey results
+	
+7. If there is no answer, you can select the NO ANSWER button, This will move to the next person.
+8. If there is no survey results and you need to move to the next person, the NEXT can be selected.
